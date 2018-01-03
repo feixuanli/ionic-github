@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Segment } from 'ionic-angular/components/segment/segment';
 
 /**
  * Generated class for the ProfileSearchPage page.
@@ -8,7 +9,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage(
+  {segment: 'profile'}
+)
 @Component({
   selector: 'page-profile-search',
   templateUrl: 'profile-search.html',

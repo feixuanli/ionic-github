@@ -10,7 +10,9 @@ import { Repository } from '../../models/repository.interface';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  segment: 'profile/results/:username'
+})
 @Component({
   selector: 'page-profile-search-results',
   templateUrl: 'profile-search-results.html',
@@ -23,6 +25,7 @@ export class ProfileSearchResultsPage {
   }
   getUserInformtion(): void {
     this.github.getUserInformation(this.username).subscribe((data: User) => this.user = data);
+    this.github.getRepositoryInformation(this.username).subscribe((data: Repository[]) => this.repositories = data);
     // this.github.mockGetUserInformation(this.username).subscribe((data: User) => this.user = data);
     // this.github.mockGetRepositoryInformation(this.username).subscribe((data: Repository[]) => this.repositories = data);
   }
